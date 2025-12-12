@@ -6,6 +6,7 @@ namespace sdl {
     void core::init() {
         printf("core init called\n");
         SDL_Init(SDL_INIT_VIDEO );
+        running = true;
     }
 
     void core::quit() {
