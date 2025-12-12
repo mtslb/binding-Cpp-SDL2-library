@@ -1,9 +1,11 @@
 #include "sdl_core.hpp"
 
 namespace sdl {
+    bool core::running = true;
 
-    void core::init(Uint32 flag) {
-        SDL_Init(flag);
+    void core::init() {
+        printf("core init called\n");
+        SDL_Init(SDL_INIT_VIDEO );
     }
 
     void core::quit() {
@@ -15,7 +17,7 @@ namespace sdl {
         while (running) {
             while (SDL_PollEvent(&e)) {
                 if (e.type == SDL_QUIT) {
-                    running = false;
+                    exit_run();
                 }
             }
         }

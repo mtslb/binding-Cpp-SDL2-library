@@ -7,13 +7,13 @@ namespace sdl {
 
     class core {
     public:
-        void init(Uint32 flag);
-        void quit();
-        void run();
-        void exit_run();
+        static void init();
+        static void quit();
+        static void run();
+        static void exit_run();
 
     private:
-        bool running = true;
+        static bool running;
     };
 
 } 

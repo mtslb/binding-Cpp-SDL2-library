@@ -1,11 +1,13 @@
 #ifndef SDL_FORWARD_HPP
 #define SDL_FORWARD_HPP
 
+#include <array>
+#include <string>
+
 namespace sdl {
 
-    // Déclarations forward des types utilisés dans les bindings
-    struct position;   
-    struct size;      
+    typedef std::array<int,2> position;   
+    typedef std::array<int,2> size;      
 
 }
 

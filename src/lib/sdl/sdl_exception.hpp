@@ -8,16 +8,13 @@
 namespace sdl {
 
     class error : public std::runtime_error {
-    public:
-        error()
-            : std::runtime_error(SDL_GetError())
-        {}
-
-        explicit error(const std::string& msg)
-            : std::runtime_error(msg + ": " + SDL_GetError())
-        {}
+        private:
+        std::string msg;
+        public:
+        error();
+        virtual const char* what() const throw();
     };
 
-} 
+} // namespace sdl
 
-#endif 
+#endif // SDL_EXCEPTION_HPP
